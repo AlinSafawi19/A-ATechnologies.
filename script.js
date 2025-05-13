@@ -28,3 +28,9 @@ document.addEventListener('click', function (event) {
     navList.classList.remove('active');
   }
 });
+
+document.addEventListener('scroll', function() {
+  var scrollPosition = window.scrollY;
+  var parallax = document.querySelector('.parallax-about');
+  parallax.style.backgroundPosition = 'center ' + (scrollPosition * 0.5) + 'px';
+});
