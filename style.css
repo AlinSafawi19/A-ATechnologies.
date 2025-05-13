@@ -544,7 +544,7 @@ footer p {
 .right-side p {
   font-size: 1rem;
   color: #bbb;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.5rem;
   line-height: 1.5;
 }
 
@@ -569,12 +569,6 @@ footer p {
   margin-top: 2rem;
   border-top: 1px solid #2a2a2d;
   padding-top: 1rem;
-}
-
-.phone-numbers {
-  display: flex;
-  gap: 15px; 
-  align-items: center;
 }
 
 @media (max-width: 768px) {
