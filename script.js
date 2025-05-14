@@ -6,10 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const currentPage = window.location.pathname.split("/").pop();
   const contactForm = document.getElementById("contact-form");
   const hamburger = document.querySelector('.hamburger');
+  const navList = document.querySelector('nav ul');
 
   // Add hamburger click handler
   if (hamburger) {
-    hamburger.addEventListener('click', toggleMenu);
+    hamburger.addEventListener('click', function () {
+      navList.classList.toggle('active');
+    });
   }
 
   links.forEach(link => {
@@ -135,11 +138,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-
-function toggleMenu() {
-  const navList = document.querySelector('nav ul');
-  navList.classList.toggle('active');
-}
 
 // Close the menu if a click is detected outside of it
 document.addEventListener('click', function (event) {
