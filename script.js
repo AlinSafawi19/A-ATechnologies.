@@ -154,10 +154,13 @@ document.addEventListener('scroll', function () {
   var scrollPosition = window.scrollY;
   var parallaxabout = document.querySelector('.parallax-about');
   var parallaxquote = document.querySelector('.quote-parallax');
+  var parallaxservices = document.querySelector('.hero-services');
 
   if (parallaxabout) {  // Check if the element exists
     parallaxabout.style.backgroundPosition = 'center ' + (scrollPosition * 0.5) + 'px';
   } else if (parallaxquote) {
     parallaxquote.style.backgroundPosition = 'center ' + (scrollPosition * 0.5) + 'px';
+  } else if (parallaxservices) {
+    parallaxservices.style.backgroundPosition = 'center ' + (scrollPosition * 0.5) + 'px';
   }
 });
