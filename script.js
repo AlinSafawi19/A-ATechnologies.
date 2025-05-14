@@ -1,9 +1,6 @@
 /** @type {any} */
 const emailjs = window.emailjs;
 
-// Initialize EmailJS
-emailjs.init("DNKL5Eeim93uS2_Qx");
-
 document.addEventListener("DOMContentLoaded", function () {
   const links = document.querySelectorAll('nav ul li a');
   const currentPage = window.location.pathname.split("/").pop();
@@ -93,10 +90,15 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       var form = this;
-      const user_id = "DNKL5Eeim93uS2_Qx";
+      emailjs.init(import.meta.env.VITE_EMAILJS_USER_ID);
 
       // Send the form without the logo attachment
-      emailjs.sendForm('service_cvttpdm', 'template_a7kti6r', form, user_id)
+      emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form,
+        import.meta.env.VITE_EMAILJS_USER_ID
+      )
         .then(function () {
           Swal.fire({
             icon: 'success',
