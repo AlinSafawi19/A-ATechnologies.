@@ -683,3 +683,30 @@ footer p {
     font-size: 1rem;
   }
 }
+
+.swal {
+  width: 300px;
+  font-size: 14px;
+  background-color: #1c1c1c;
+  color: white;
+  border: 1px solid #333;
+  margin-top: 4rem;
+}
+
+.swal .swal2-popup {
+  background-color: #1c1c1c;
+  color: #e0e0e0;
+  border: 1px solid #333;
+}
+
+.swal .swal2-title {
+  color: #00b0ff;
+}
+
+.swal2-timer-progress-bar {
+  background-color: #4f46e5;
+}
+
+.swal .swal2-header {
+  background-color: #333;
+}

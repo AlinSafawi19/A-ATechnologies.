@@ -52,26 +52,66 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
   const message = document.querySelector('textarea[name="message"]');
 
   if (!name.value.trim()) {
-    alert("Please enter your name.");
+    Swal.fire({
+      icon: 'warning',
+      text: 'Please enter your name.',
+      timer: 2000,
+      position: 'top-end',
+      customClass: {
+        popup: 'swal'
+      },
+      showConfirmButton: false,
+      timerProgressBar: true
+    });
     name.focus();
     return;
   }
 
   if (!email.value.trim()) {
-    alert("Please enter your email.");
+    Swal.fire({
+      icon: 'warning',
+      text: 'Please enter your email.',
+      timer: 2000,
+      position: 'top-end',
+      customClass: {
+        popup: 'swal'
+      },
+      showConfirmButton: false,
+      timerProgressBar: true
+    });
     email.focus();
     return;
   }
 
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   if (!emailRegex.test(email.value)) {
-    alert("Please enter a valid email address.");
+    Swal.fire({
+      icon: 'warning',
+      text: 'Please enter a valid email address.',
+      timer: 2000,
+      position: 'top-end',
+      customClass: {
+        popup: 'swal'
+      },
+      showConfirmButton: false,
+      timerProgressBar: true
+    });
     email.focus();
     return;
   }
 
   if (!message.value.trim()) {
-    alert("Please enter your message.");
+    Swal.fire({
+      icon: 'warning',
+      text: 'Please enter your message.',
+      timer: 2000,
+      position: 'top-end',
+      customClass: {
+        popup: 'swal'
+      },
+      showConfirmButton: false,
+      timerProgressBar: true
+    });
     message.focus();
     return;
   }
@@ -82,10 +122,30 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
   // Send the form without the logo attachment
   emailjs.sendForm('service_cvttpdm', 'template_a7kti6r', form, user_id)
     .then(function () {
-      alert('Message sent successfully!');
+      Swal.fire({
+        icon: 'success',
+        text: 'Message sent successfully!',
+        timer: 1000,
+        position: 'top-end',
+        customClass: {
+          popup: 'swal'
+        },
+        showConfirmButton: false,
+        timerProgressBar: true
+      });
       form.reset();
     })
-    .catch(function (error) {
-      alert('Error sending message: ' + error);
+    .catch(function () {
+      Swal.fire({
+        icon: 'error',
+        text: 'Please try again. If the issue persists, contact us at aa_techpartners@outlook.com or call one of these numbers +961 7 692 9993 | +961 7 188 2088.',
+        timer: 10000,
+        position: 'top-end',
+        customClass: {
+          popup: 'swal'
+        },
+        showConfirmButton: false,
+        timerProgressBar: true
+      });
     });
 });
