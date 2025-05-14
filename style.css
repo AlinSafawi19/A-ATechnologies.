@@ -51,6 +51,12 @@ header {
   cursor: pointer;
 }
 
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -228,22 +234,6 @@ nav ul li a.active {
     padding: 0 1rem;
   }
 
-  .email-form {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .email-form input {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .email-form button {
-    width: 100%;
-    max-width: 120px;
-  }
-
   .features-grid {
     grid-template-columns: 1fr;
     margin-top: 2rem;
@@ -265,6 +255,46 @@ footer {
 footer p {
   color: #aaa;
   font-size: 1rem;
+}
+
+.schedule-btn {
+  background-color: #4f46e5; 
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none; 
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.schedule-btn i.fas.fa-calendar-alt {
+  font-size: 1rem; 
+}
+
+.schedule-btn:hover {
+  background-color: #6366f1;
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.schedule-btn:active {
+  transform: translateY(1px); 
+}
+
+@media (max-width: 768px) {
+  .schedule-btn {
+    width: 100%;
+    justify-content: center;
+    max-width: 300px;
+  }
 }
 
 /* About Section Styles */
@@ -595,7 +625,6 @@ footer p {
 
 .quote-parallax {
   background-image: url('assets/images/quote-parallax.jpg');
-  /* Make sure to add this image */
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -777,3 +806,4 @@ footer p {
 .swal .swal2-header {
   background-color: #333;
 }
+
