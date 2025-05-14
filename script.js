@@ -155,6 +155,7 @@ document.addEventListener('scroll', function () {
   var parallaxabout = document.querySelector('.parallax-about');
   var parallaxquote = document.querySelector('.quote-parallax');
   var parallaxservices = document.querySelector('.hero-services');
+  var parallaxindex = document.querySelector('.hero-section');
 
   if (parallaxabout) {  // Check if the element exists
     parallaxabout.style.backgroundPosition = 'center ' + (scrollPosition * 0.5) + 'px';
@@ -162,5 +163,7 @@ document.addEventListener('scroll', function () {
     parallaxquote.style.backgroundPosition = 'center ' + (scrollPosition * 0.5) + 'px';
   } else if (parallaxservices) {
     parallaxservices.style.backgroundPosition = 'center ' + (scrollPosition * 0.5) + 'px';
+  } else if (parallaxindex) {
+    parallaxindex.style.backgroundPosition = 'top ' + (scrollPosition * 0.5) + 'px';
   }
 });
