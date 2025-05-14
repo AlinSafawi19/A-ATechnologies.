@@ -86,8 +86,9 @@ nav ul li a.active {
 
 @media (max-width: 768px) {
   .hero-section {
-    background-attachment: scroll;
+    background-attachment: scroll; /* Disable fixed attachment on mobile */
     background-position: center center;
+    background-size: cover;
   }
 }
 
@@ -649,13 +650,6 @@ footer p {
   z-index: 0;
 }
 
-@media (max-width: 768px) {
-  .quote-parallax {
-    background-attachment: scroll;
-    background-position: center center;
-  }
-}
-
 .quote-overlay {
   max-width: 800px;
   margin: 0 auto;
@@ -683,13 +677,6 @@ footer p {
   padding: 6rem 1.5rem 4rem;
   position: relative;
   z-index: 0;
-}
-
-@media (max-width: 768px) {
-  .hero-services {
-    background-attachment: scroll;
-    background-position: center center;
-  }
 }
 
 .hero-services::before {
