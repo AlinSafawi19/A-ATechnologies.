@@ -164,6 +164,6 @@ document.addEventListener('scroll', function () {
   } else if (parallaxservices) {
     parallaxservices.style.backgroundPosition = 'center ' + (scrollPosition * 0.5) + 'px';
   } else if (parallaxindex) {
-    parallaxindex.style.backgroundPosition = 'top ' + (scrollPosition * 0.5) + 'px';
+    parallaxindex.style.backgroundPosition = 'center ' + (scrollPosition * 0.5) + 'px';
   }
 });
