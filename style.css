@@ -309,7 +309,7 @@ footer p {
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  padding: 6rem 1.5rem;
+  padding: 50px 20px;
   color: white;
   border-radius: 8px;
   height: 400px;
@@ -321,6 +321,7 @@ footer p {
   padding: 3rem 2rem;
   text-align: center;
 }
+
 
 .about-title {
   font-size: 2.5rem;
@@ -478,6 +479,13 @@ footer p {
   font-size: 0.95rem;
   line-height: 1.6;
   margin: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .parallax-about {
+    background-attachment: scroll;
+    background-position: center center;
+  }
 }
 
 /* Contact Section Styles */
