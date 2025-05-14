@@ -38,23 +38,20 @@ document.addEventListener('scroll', function () {
   }
 });
 
+emailjs.init("DNKL5Eeim93uS2_Qx");
+
 document.getElementById("contact-form").addEventListener("submit", function (event) {
   event.preventDefault();
-  var formData = new FormData(this);
-  var logo = new File([logoBlob], "/images/logo.png", { type: "image/png" });
+  var form = this;
+  const user_id = "DNKL5Eeim93uS2_Qx";
 
-  emailjs.sendForm('service_cvttpdm', 'template_a7kti6r', this, {
-    attachments: [{
-      name: 'logo.png',
-      content: logo,
-      type: 'image/png',
-      encoding: 'base64',
-      cid: 'logo.png'
-    }]
-  })
-    .then(function (response) {
+  // Send the form without the logo attachment
+  emailjs.sendForm('service_cvttpdm', 'template_a7kti6r', form, user_id)
+    .then(function () {
       alert('Message sent successfully!');
-    }, function (error) {
+      form.reset();
+    })
+    .catch(function (error) {
       alert('Error sending message: ' + error);
     });
 });
