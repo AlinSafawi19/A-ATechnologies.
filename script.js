@@ -152,9 +152,10 @@ document.addEventListener('click', function (event) {
 
 document.addEventListener('scroll', function () {
   var scrollPosition = window.scrollY;
-  var parallax = document.querySelector('.parallax-about');
+  var parallaxabout = document.querySelector('.parallax-about');
+  var parallaxquote = document.querySelector('.quote-parallax');
 
-  if (parallax) {  // Check if the element exists
+  if (parallaxabout || parallaxquote) {  // Check if the element exists
     parallax.style.backgroundPosition = 'center ' + (scrollPosition * 0.5) + 'px';
   }
 });

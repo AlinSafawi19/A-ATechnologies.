@@ -309,7 +309,7 @@ footer p {
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  padding: 50px 20px;
+  padding: 6rem 1.5rem;
   color: white;
   border-radius: 8px;
   height: 400px;
@@ -321,7 +321,6 @@ footer p {
   padding: 3rem 2rem;
   text-align: center;
 }
-
 
 .about-title {
   font-size: 2.5rem;
@@ -631,13 +630,6 @@ footer p {
   padding: 6rem 1.5rem;
   text-align: center;
   color: white;
-  position: relative;
-  z-index: 0;
-}
-
-.quote-overlay {
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 /* services */
