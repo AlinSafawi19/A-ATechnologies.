@@ -481,6 +481,13 @@ footer p {
   margin: 0 1rem;
 }
 
+@media (max-width: 768px) {
+  .parallax-about {
+    background-attachment: scroll;
+    background-position: center center;
+  }
+}
+
 /* Contact Section Styles */
 .contact-section {
   padding: 1.5rem;
