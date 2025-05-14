@@ -225,7 +225,6 @@ nav ul li a.active {
   .hero-section {
     height: auto;
     padding: 4rem 1.5rem 2rem;
-    background-attachment: scroll;
   }
 
   .hero-title {
