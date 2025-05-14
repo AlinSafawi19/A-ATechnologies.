@@ -78,7 +78,7 @@ nav ul li a.active {
 .hero-section {
   position: relative;
   height: 100vh;
-  background: url('assets/images/black-texture-background.webp') no-repeat center center/cover;
+  background: url('assets/images/black-texture-background.jpg') no-repeat center center/cover;
   background-attachment: fixed;
   color: white;
   z-index: 0;
@@ -305,7 +305,7 @@ footer p {
 }
 
 .parallax-about {
-  background-image: url('assets/images/resized-image-Promo.jpeg');
+  background-image: url('assets/images/about-parallex.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -624,7 +624,7 @@ footer p {
 }
 
 .quote-parallax {
-  background-image: url('assets/images/quote-parallax.webp');
+  background-image: url('assets/images/quote-parallax.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -677,7 +677,7 @@ footer p {
 }
 
 .hero-services {
-  background-image: url('assets/images/service-parallex.webp');
+  background-image: url('assets/images/service-parallex.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
