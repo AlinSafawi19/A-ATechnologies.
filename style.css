@@ -39,7 +39,6 @@ header {
 }
 
 .hero-title {
-  font-style: italic;
   font-size: 2.5rem;
   text-align: center;
   letter-spacing: 2px;
@@ -88,7 +87,6 @@ nav ul li a.active {
 }
 
 .hero-title {
-  font-style: italic;
   font-size: 2.5rem;
   text-align: center;
   letter-spacing: 2px;
@@ -284,29 +282,29 @@ footer p {
   padding: 50px 20px;
   color: white;
   border-radius: 8px;
+  height: 400px;
 }
 
+.about-intro {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+
 .about-title {
-  font-style: italic;
   font-size: 2.5rem;
-  letter-spacing: 2px;
-  line-height: 1.2;
-  margin-left: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.2rem;
+  letter-spacing: 3px;
 }
 
 .about-description {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  max-width: 600px;
-  padding: 20px;
-  border-radius: 5px;
-}
-
-.parallax-about mark {
-  background-color: #8eb9d5;
-  color: #000;
-  font-weight: 700;
-  border-radius: 2px;
+  font-size: 1.25rem;
+  color: #e0e0e0;
+  line-height: 1.9;
 }
 
 .mission-section,
@@ -398,7 +396,6 @@ footer p {
   color: #fff;
   font-size: 2.2rem;
   margin-bottom: 3rem;
-  font-style: italic;
   border-bottom: 2px solid #4f46e5;
   display: inline-block;
   padding-bottom: 0.5rem;
@@ -484,7 +481,6 @@ footer p {
 }
 
 .contact-title {
-  font-style: italic;
   font-size: 2.5rem;
   text-align: center;
   letter-spacing: 2px;
@@ -597,6 +593,48 @@ footer p {
   }
 }
 
+.quote-parallax {
+  background-image: url('assets/images/quote-parallax.jpg');
+  /* Make sure to add this image */
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  padding: 6rem 1.5rem;
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 0;
+}
+
+.quote-parallax::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.quote-overlay {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quote-parallax blockquote {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.quote-parallax cite {
+  display: block;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #ccc;
+}
+
 /* services */
 .services-section {
   padding: 4rem 1.5rem;
@@ -609,8 +647,37 @@ footer p {
   text-align: center;
 }
 
+.hero-services {
+  background-image: url('assets/images/service-parallex.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 6rem 1.5rem 4rem;
+  position: relative;
+  z-index: 0;
+}
+
+.hero-services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  /* optional dark overlay */
+  z-index: -1;
+}
+
+.hero-services h2,
+.hero-services p {
+  position: relative;
+  z-index: 1;
+}
+
 .services-title {
-  font-style: italic;
   font-size: 2.5rem;
   text-align: center;
   letter-spacing: 2px;
