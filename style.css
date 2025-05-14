@@ -78,7 +78,7 @@ nav ul li a.active {
 .hero-section {
   position: relative;
   height: 100vh;
-  background: url('assets/images/black-texture-background.jpg') no-repeat center center/cover;
+  background: url('assets/images/black-texture-background.webp') no-repeat center center/cover;
   background-attachment: fixed;
   color: white;
   z-index: 0;
@@ -258,7 +258,7 @@ footer p {
 }
 
 .schedule-btn {
-  background-color: #4f46e5; 
+  background-color: #4f46e5;
   color: #fff;
   padding: 0.2rem 0.5rem;
   font-size: 1rem;
@@ -270,13 +270,13 @@ footer p {
   align-items: center;
   gap: 0.5rem;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  text-decoration: none; 
+  text-decoration: none;
   margin-right: 1rem;
   margin-left: 1rem;
 }
 
 .schedule-btn i.fas.fa-calendar-alt {
-  font-size: 1rem; 
+  font-size: 1rem;
 }
 
 .schedule-btn:hover {
@@ -286,7 +286,7 @@ footer p {
 }
 
 .schedule-btn:active {
-  transform: translateY(1px); 
+  transform: translateY(1px);
 }
 
 @media (max-width: 768px) {
@@ -305,7 +305,7 @@ footer p {
 }
 
 .parallax-about {
-  background-image: url('assets/images/about-parallex.jpg');
+  background-image: url('assets/images/about-parallex.webp');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -624,7 +624,7 @@ footer p {
 }
 
 .quote-parallax {
-  background-image: url('assets/images/quote-parallax.jpg');
+  background-image: url('assets/images/quote-parallax.webp');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -677,7 +677,7 @@ footer p {
 }
 
 .hero-services {
-  background-image: url('assets/images/service-parallex.jpg');
+  background-image: url('assets/images/service-parallex.webp');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -806,4 +806,3 @@ footer p {
 .swal .swal2-header {
   background-color: #333;
 }
-
