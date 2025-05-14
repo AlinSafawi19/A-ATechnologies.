@@ -635,33 +635,9 @@ footer p {
   z-index: 0;
 }
 
-.quote-parallax::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: -1;
-}
-
 .quote-overlay {
   max-width: 800px;
   margin: 0 auto;
-}
-
-.quote-parallax blockquote {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-.quote-parallax cite {
-  display: block;
-  font-size: 1.2rem;
-  margin-top: 1rem;
-  color: #ccc;
 }
 
 /* services */
