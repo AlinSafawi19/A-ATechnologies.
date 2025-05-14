@@ -29,11 +29,32 @@ document.addEventListener('click', function (event) {
   }
 });
 
-document.addEventListener('scroll', function() {
+document.addEventListener('scroll', function () {
   var scrollPosition = window.scrollY;
   var parallax = document.querySelector('.parallax-about');
 
   if (parallax) {  // Check if the element exists
     parallax.style.backgroundPosition = 'center ' + (scrollPosition * 0.5) + 'px';
   }
+});
+
+document.getElementById("contact-form").addEventListener("submit", function (event) {
+  event.preventDefault();
+  var formData = new FormData(this);
+  var logo = new File([logoBlob], "/images/logo.png", { type: "image/png" });
+
+  emailjs.sendForm('service_cvttpdm', 'template_a7kti6r', this, {
+    attachments: [{
+      name: 'logo.png',
+      content: logo,
+      type: 'image/png',
+      encoding: 'base64',
+      cid: 'logo.png'
+    }]
+  })
+    .then(function (response) {
+      alert('Message sent successfully!');
+    }, function (error) {
+      alert('Error sending message: ' + error);
+    });
 });
