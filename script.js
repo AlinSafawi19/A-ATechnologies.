@@ -155,7 +155,9 @@ document.addEventListener('scroll', function () {
   var parallaxabout = document.querySelector('.parallax-about');
   var parallaxquote = document.querySelector('.quote-parallax');
 
-  if (parallaxabout || parallaxquote) {  // Check if the element exists
-    parallax.style.backgroundPosition = 'center ' + (scrollPosition * 0.5) + 'px';
+  if (parallaxabout) {  // Check if the element exists
+    parallaxabout.style.backgroundPosition = 'center ' + (scrollPosition * 0.5) + 'px';
+  } else if (parallaxquote) {
+    parallaxquote.style.backgroundPosition = 'center ' + (scrollPosition * 0.5) + 'px';
   }
 });
