@@ -5,6 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const links = document.querySelectorAll('nav ul li a');
   const currentPage = window.location.pathname.split("/").pop();
   const contactForm = document.getElementById("contact-form");
+  const hamburger = document.querySelector('.hamburger');
+
+  // Add hamburger click handler
+  if (hamburger) {
+    hamburger.addEventListener('click', toggleMenu);
+  }
 
   links.forEach(link => {
     // Remove 'active' class from all links first
