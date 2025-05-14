@@ -1,3 +1,9 @@
+/** @type {any} */
+const emailjs = window.emailjs;
+
+// Initialize EmailJS
+emailjs.init("DNKL5Eeim93uS2_Qx");
+
 document.addEventListener("DOMContentLoaded", function () {
   const links = document.querySelectorAll('nav ul li a');
   const currentPage = window.location.pathname.split("/").pop();
@@ -38,10 +44,38 @@ document.addEventListener('scroll', function () {
   }
 });
 
-emailjs.init("DNKL5Eeim93uS2_Qx");
-
 document.getElementById("contact-form").addEventListener("submit", function (event) {
   event.preventDefault();
+
+  const name = document.querySelector('input[name="name"]');
+  const email = document.querySelector('input[name="email"]');
+  const message = document.querySelector('textarea[name="message"]');
+
+  if (!name.value.trim()) {
+    alert("Please enter your name.");
+    name.focus();
+    return;
+  }
+
+  if (!email.value.trim()) {
+    alert("Please enter your email.");
+    email.focus();
+    return;
+  }
+
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!emailRegex.test(email.value)) {
+    alert("Please enter a valid email address.");
+    email.focus();
+    return;
+  }
+
+  if (!message.value.trim()) {
+    alert("Please enter your message.");
+    message.focus();
+    return;
+  }
+
   var form = this;
   const user_id = "DNKL5Eeim93uS2_Qx";
 
