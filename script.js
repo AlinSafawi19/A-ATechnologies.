@@ -39,9 +39,7 @@ document.addEventListener('scroll', function () {
   var scrollPosition = window.scrollY;
   var parallax = document.querySelector('.parallax-about');
 
-  if (parallax) {  // Check if the element exists
-    parallax.style.backgroundPosition = 'center ' + (scrollPosition * 0.5) + 'px';
-  }
+  parallax.style.backgroundPosition = 'center ' + (scrollPosition * 0.5) + 'px';
 });
 
 document.getElementById("contact-form").addEventListener("submit", function (event) {
