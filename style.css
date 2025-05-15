@@ -267,13 +267,10 @@ footer p {
   position: fixed;
   bottom: 2rem;
   right: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
   z-index: 1000;
 }
 
-.scroll-buttons button {
+#scroll-up {
   background-color: #000;
   color: #fff;
   border: 2px solid #fff;
@@ -287,16 +284,17 @@ footer p {
   display: flex;
   align-items: center;
   justify-content: center;
+  display: none; /* initially hidden */
 }
 
-.scroll-buttons button:hover {
+#scroll-up:hover {
   border-color: #888;
   box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
   filter: brightness(1.2);
   transform: translateY(-2px);
 }
 
-.scroll-buttons button:active {
+#scroll-up:active {
   transform: translateY(1px);
 }
 

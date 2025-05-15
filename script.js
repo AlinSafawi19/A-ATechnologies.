@@ -177,16 +177,19 @@ document.addEventListener('scroll', function () {
   }
 });
 
-document.getElementById('scroll-up').addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
+const scrollUpButton = document.getElementById('scroll-up');
+
+window.addEventListener('scroll', function () {
+  if (window.scrollY > 100) {
+    scrollUpButton.style.display = 'flex';
+  } else {
+    scrollUpButton.style.display = 'none';
+  }
 });
 
-document.getElementById('scroll-down').addEventListener('click', () => {
+scrollUpButton.addEventListener('click', () => {
   window.scrollTo({
-    top: document.body.scrollHeight,
+    top: 0,
     behavior: 'smooth'
   });
 });
