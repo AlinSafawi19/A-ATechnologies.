@@ -109,14 +109,14 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       var form = this;
-      emailjs.init(import.meta.env.VITE_EMAILJS_USER_ID);
+      emailjs.init("DNKL5Eeim93uS2_Qx");
 
       // Send the form without the logo attachment
       emailjs.sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        "service_cvttpdm",
+        "template_a7kti6r",
         form,
-        import.meta.env.VITE_EMAILJS_USER_ID
+        "DNKL5Eeim93uS2_Qx"
       )
         .then(function () {
           Swal.fire({
