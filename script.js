@@ -3,7 +3,7 @@ const emailjs = window.emailjs;
 
 document.addEventListener("DOMContentLoaded", function () {
   const links = document.querySelectorAll('nav ul li a');
-  const currentPage = window.location.pathname.split("/").pop();
+  const currentPath = window.location.pathname;
   const contactForm = document.getElementById("contact-form");
   const hamburger = document.querySelector('.hamburger');
   const navList = document.querySelector('nav ul');
@@ -14,17 +14,27 @@ document.addEventListener("DOMContentLoaded", function () {
       navList.classList.toggle('active');
     });
   }
+  console.log('currentPath:', window.location.pathname);
 
   links.forEach(link => {
-    // Remove 'active' class from all links first
+    const linkPath = link.getAttribute('href').replace(/\/$/, '');
+    const normalizedCurrentPath = currentPath.replace(/\/$/, '');
+  
     link.classList.remove('active');
-
-    // Add 'active' class to the current page's link
-    if (link.getAttribute('href') === currentPage) {
-      link.classList.add('active');
+  
+    if (linkPath === '') {
+      // Home link should only be active if current path is empty or '/'
+      if (normalizedCurrentPath === '') {
+        link.classList.add('active');
+      }
+    } else {
+      // For other links, check if current path starts with linkPath
+      if (normalizedCurrentPath === linkPath || normalizedCurrentPath.startsWith(linkPath + '/')) {
+        link.classList.add('active');
+      }
     }
   });
-
+  
   if (contactForm) {
     contactForm.addEventListener("submit", function (event) {
       event.preventDefault();
