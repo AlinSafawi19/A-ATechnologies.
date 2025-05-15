@@ -176,3 +176,17 @@ document.addEventListener('scroll', function () {
     parallaxindex.style.backgroundPosition = 'center ' + (scrollPosition * 0.5) + 'px';
   }
 });
+
+document.getElementById('scroll-up').addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+document.getElementById('scroll-down').addEventListener('click', () => {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: 'smooth'
+  });
+});
