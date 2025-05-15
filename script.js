@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
       navList.classList.toggle('active');
     });
   }
-  console.log('currentPath:', window.location.pathname);
 
   links.forEach(link => {
     const linkPath = link.getAttribute('href').replace(/\/$/, '');
