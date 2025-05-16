@@ -208,8 +208,11 @@ scrollUpButton.addEventListener('click', () => {
     window.voiceflow.chat.load({
       verify: { projectID: '68267aa3c6a18bbcfc972b58' },
       url: 'https://general-runtime.voiceflow.com',
-      versionID: 'production'
+      versionID: 'production',
+      voice: {
+        url: "https://runtime-api.voiceflow.com"
+      }
     });
   }
-  v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
 })(document, 'script');
