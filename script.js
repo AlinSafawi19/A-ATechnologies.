@@ -31,6 +31,37 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  const nameInput = document.querySelector('input[name="name"]');
+  const emailInput = document.querySelector('input[name="email"]');
+  const messageTextarea = document.querySelector('textarea[name="message"]');
+
+  if (nameInput && emailInput) {
+    nameInput.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        emailInput.focus();
+      }
+    });
+  }
+
+  if (emailInput && messageTextarea) {
+    emailInput.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        messageTextarea.focus();
+      }
+    });
+  }
+
+  if (messageTextarea && contactForm) {
+    messageTextarea.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault(); // Prevent newline
+        contactForm.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+      }
+    });
+  }
+
   if (contactForm) {
     contactForm.addEventListener("submit", function (event) {
       event.preventDefault();
