@@ -1,6 +1,3 @@
-/** @type {any} */
-const emailjs = window.emailjs;
-
 document.addEventListener("DOMContentLoaded", function () {
   const links = document.querySelectorAll('nav ul li a');
   const currentPath = window.location.pathname;
@@ -18,9 +15,9 @@ document.addEventListener("DOMContentLoaded", function () {
   links.forEach(link => {
     const linkPath = link.getAttribute('href').replace(/\/$/, '');
     const normalizedCurrentPath = currentPath.replace(/\/$/, '');
-  
+
     link.classList.remove('active');
-  
+
     if (linkPath === '') {
       // Home link should only be active if current path is empty or '/'
       if (normalizedCurrentPath === '') {
@@ -33,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
-  
+
   if (contactForm) {
     contactForm.addEventListener("submit", function (event) {
       event.preventDefault();
@@ -107,31 +104,19 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      var form = this;
-      emailjs.init("DNKL5Eeim93uS2_Qx");
+      var Airtable = require('airtable');
+      var base = new Airtable({ apiKey: 'patVwXbR9ZnaEp1TX.352999e3bbf9c0286db19ef4bfb6af227348c8b54d12c26774413c6102a9096d' }).base('appwWxBWqcSL51NSQ');
 
-      // Send the form without the logo attachment
-      emailjs.sendForm(
-        "service_cvttpdm",
-        "template_a7kti6r",
-        form,
-        "DNKL5Eeim93uS2_Qx"
-      )
-        .then(function () {
-          Swal.fire({
-            icon: 'success',
-            text: 'Message sent successfully!',
-            timer: 1000,
-            position: 'top-end',
-            customClass: {
-              popup: 'swal'
-            },
-            showConfirmButton: false,
-            timerProgressBar: true
-          });
-          form.reset();
-        })
-        .catch(function () {
+      base('AA Technologies').create([
+        {
+          "fields": {
+            "Name": name.value.trim(),
+            "Email": email.value.trim(),
+            "Message": message.value.trim()
+          }
+        }
+      ], { typecast: true }, function (err, records) {
+        if (err) {
           Swal.fire({
             icon: 'error',
             text: 'Please try again. If the issue persists, contact us at aa_techpartners@outlook.com or call one of these numbers +961 7 692 9993 | +961 7 188 2088.',
@@ -143,7 +128,27 @@ document.addEventListener("DOMContentLoaded", function () {
             showConfirmButton: false,
             timerProgressBar: true
           });
+          return;
+        }
+        records.forEach(function (record) {
+          Swal.fire({
+            icon: 'success',
+            html: `
+              <p><strong>Your message was sent successfully!</strong></p>
+              <p>We'll get back to you shortly.</p>
+              <p>In the meantime, feel free to <a href="mailto:aa_techpartners@outlook.com" target="_blank">contact us</a> or <a href="https://calendly.com/your-booking-link" target="_blank">book a meeting</a>.</p>
+            `,
+            timer: 8000,
+            position: 'top-end',
+            customClass: {
+              popup: 'swal'
+            },
+            showConfirmButton: false,
+            timerProgressBar: true
+          });
         });
+      });
+
     });
   }
 });
@@ -193,3 +198,15 @@ scrollUpButton.addEventListener('click', () => {
     behavior: 'smooth'
   });
 });
+
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '68267aa3c6a18bbcfc972b58' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production'
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
