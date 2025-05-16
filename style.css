@@ -297,6 +297,10 @@ footer p {
   transform: translateY(1px);
 }
 
+.fa-spinner {
+  margin-right: 5px;
+}
+
 .schedule-btn {
   background-color: #4f46e5;
   color: #fff;

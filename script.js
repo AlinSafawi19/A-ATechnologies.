@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const name = document.querySelector('input[name="name"]');
       const email = document.querySelector('input[name="email"]');
       const message = document.querySelector('textarea[name="message"]');
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
 
       if (!name.value.trim()) {
         Swal.fire({
@@ -104,6 +105,10 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Sending...`;
+
+
       fetch("https://api.airtable.com/v0/appwWxBWqcSL51NSQ/AA%20Technologies", {
         method: "POST",
         headers: {
@@ -120,6 +125,8 @@ document.addEventListener("DOMContentLoaded", function () {
       })
         .then(response => response.json())
         .then(data => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = `<i class="fas fa-paper-plane"></i> Send Message`;
           Swal.fire({
             icon: 'success',
             html: `
@@ -138,6 +145,8 @@ document.addEventListener("DOMContentLoaded", function () {
           contactForm.reset();
         })
         .catch(err => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = `<i class="fas fa-paper-plane"></i> Send Message`;
           Swal.fire({
             icon: 'error',
             text: 'Something went wrong. Please try again later.',
