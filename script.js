@@ -104,40 +104,29 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      var Airtable = require('airtable');
-      var base = new Airtable({ apiKey: 'patVwXbR9ZnaEp1TX.352999e3bbf9c0286db19ef4bfb6af227348c8b54d12c26774413c6102a9096d' }).base('appwWxBWqcSL51NSQ');
-
-      base('AA Technologies').create([
-        {
-          "fields": {
-            "Name": name.value.trim(),
-            "Email": email.value.trim(),
-            "Message": message.value.trim()
+      fetch("https://api.airtable.com/v0/appwWxBWqcSL51NSQ/AA%20Technologies", {
+        method: "POST",
+        headers: {
+          "Authorization": "Bearer patVwXbR9ZnaEp1TX.352999e3bbf9c0286db19ef4bfb6af227348c8b54d12c26774413c6102a9096d",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          fields: {
+            Name: name.value.trim(),
+            Email: email.value.trim(),
+            Message: message.value.trim()
           }
-        }
-      ], { typecast: true }, function (err, records) {
-        if (err) {
-          Swal.fire({
-            icon: 'error',
-            text: 'Please try again. If the issue persists, contact us at aa_techpartners@outlook.com or call one of these numbers +961 7 692 9993 | +961 7 188 2088.',
-            timer: 10000,
-            position: 'top-end',
-            customClass: {
-              popup: 'swal'
-            },
-            showConfirmButton: false,
-            timerProgressBar: true
-          });
-          return;
-        }
-        records.forEach(function (record) {
+        })
+      })
+        .then(response => response.json())
+        .then(data => {
           Swal.fire({
             icon: 'success',
             html: `
-              <p><strong>Your message was sent successfully!</strong></p>
-              <p>We'll get back to you shortly.</p>
-              <p>In the meantime, feel free to <a href="mailto:aa_techpartners@outlook.com" target="_blank">contact us</a> or <a href="https://calendly.com/your-booking-link" target="_blank">book a meeting</a>.</p>
-            `,
+            <p><strong>Your message was sent successfully!</strong></p>
+            <p>We'll get back to you shortly.</p>
+            <p>In the meantime, feel free to <a href="mailto:aa_techpartners@outlook.com" target="_blank">contact us</a> or <a href="https://calendly.com/your-booking-link" target="_blank">book a meeting</a>.</p>
+          `,
             timer: 8000,
             position: 'top-end',
             customClass: {
@@ -146,8 +135,22 @@ document.addEventListener("DOMContentLoaded", function () {
             showConfirmButton: false,
             timerProgressBar: true
           });
+          contactForm.reset();
+        })
+        .catch(err => {
+          Swal.fire({
+            icon: 'error',
+            text: 'Something went wrong. Please try again later.',
+            timer: 10000,
+            position: 'top-end',
+            customClass: {
+              popup: 'swal'
+            },
+            showConfirmButton: false,
+            timerProgressBar: true
+          });
+          contactForm.reset();
         });
-      });
 
     });
   }
@@ -199,14 +202,14 @@ scrollUpButton.addEventListener('click', () => {
   });
 });
 
-  (function(d, t) {
-      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-      v.onload = function() {
-        window.voiceflow.chat.load({
-          verify: { projectID: '68267aa3c6a18bbcfc972b58' },
-          url: 'https://general-runtime.voiceflow.com',
-          versionID: 'production'
-        });
-      }
-      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-  })(document, 'script');
+(function (d, t) {
+  var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+  v.onload = function () {
+    window.voiceflow.chat.load({
+      verify: { projectID: '68267aa3c6a18bbcfc972b58' },
+      url: 'https://general-runtime.voiceflow.com',
+      versionID: 'production'
+    });
+  }
+  v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+})(document, 'script');
