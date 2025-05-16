@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       submitBtn.disabled = true;
-      submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Sending...`;
+      submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i>`;
 
 
       fetch("https://api.airtable.com/v0/appwWxBWqcSL51NSQ/AA%20Technologies", {
