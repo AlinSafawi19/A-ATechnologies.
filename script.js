@@ -125,7 +125,6 @@ document.addEventListener("DOMContentLoaded", function () {
       })
         .then(response => response.json())
         .then(data => {
-          submitBtn.disabled = false;
           submitBtn.innerHTML = `<i class="fas fa-paper-plane"></i> Send Message`;
           Swal.fire({
             icon: 'success',
@@ -143,6 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
             timerProgressBar: true
           });
           contactForm.reset();
+          submitBtn.disabled = false;
         })
         .catch(err => {
           submitBtn.disabled = false;
@@ -159,6 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
             timerProgressBar: true
           });
           contactForm.reset();
+          submitBtn.disabled = false;
         });
 
     });
