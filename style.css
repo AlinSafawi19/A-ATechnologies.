@@ -1,3 +1,9 @@
+:root {
+  --primary-color: #4f46e5;
+  --dark-bg: #1a1a1d;
+  --light-gray: #bbb;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -38,13 +44,6 @@ header {
   height: auto;
 }
 
-.hero-title {
-  font-size: 2.5rem;
-  text-align: center;
-  letter-spacing: 2px;
-  line-height: 1.2;
-}
-
 .hamburger {
   display: none;
   font-size: 1.8rem;
@@ -72,7 +71,7 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a.active {
-  color: #4f46e5;
+  color: var(--primary-color);
 }
 
 .hero-section {
@@ -114,14 +113,14 @@ nav ul li a.active {
   font-size: 1.2rem;
 }
 
-.cta-button-container {
+.button-container {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
 }
 
-.cta-button {
-  background-color: #4f46e5;
+.button {
+  background-color: var(--primary-color);
   color: #fff;
   padding: 0.75rem 1.5rem;
   font-size: 1.1rem;
@@ -135,17 +134,35 @@ nav ul li a.active {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.cta-button:hover {
+.button:hover {
   background-color: #6366f1;
   transform: translateY(-2px);
 }
 
-.cta-button i.fas.fa-envelope {
+.button i.fas.fa-envelope {
   font-size: 1.1rem;
 }
 
+.schedule-btn {
+  padding: 0.2rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  align-items: center;
+  text-decoration: none;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.schedule-btn i.fas.fa-calendar-alt {
+  font-size: 1rem;
+}
+
+.schedule-btn:active {
+  transform: translateY(1px);
+}
+
 @media (max-width: 768px) {
-  .cta-button {
+  .button {
     width: 100%;
     justify-content: center;
     max-width: 300px;
@@ -183,14 +200,6 @@ nav ul li a.active {
 }
 
 .large {
-  grid-column: span 2;
-}
-
-.integration {
-  grid-column: span 2;
-}
-
-.analytics {
   grid-column: span 2;
 }
 
@@ -244,9 +253,7 @@ nav ul li a.active {
     margin-top: 2rem;
   }
 
-  .card.large,
-  .card.integration,
-  .card.analytics {
+  .card.large {
     grid-column: auto;
   }
 }
@@ -283,7 +290,8 @@ footer p {
   display: flex;
   align-items: center;
   justify-content: center;
-  display: none; /* initially hidden */
+  display: none;
+  /* initially hidden */
 }
 
 #scroll-up:hover {
@@ -299,38 +307,6 @@ footer p {
 
 .fa-spinner {
   margin-right: 5px;
-}
-
-.schedule-btn {
-  background-color: #4f46e5;
-  color: #fff;
-  padding: 0.2rem 0.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  text-decoration: none;
-  margin-right: 1rem;
-  margin-left: 1rem;
-}
-
-.schedule-btn i.fas.fa-calendar-alt {
-  font-size: 1rem;
-}
-
-.schedule-btn:hover {
-  background-color: #6366f1;
-  transform: translateY(-2px);
-  color: #fff;
-}
-
-.schedule-btn:active {
-  transform: translateY(1px);
 }
 
 @media (max-width: 768px) {
@@ -396,7 +372,7 @@ footer p {
 }
 
 .mission-section h3 {
-  border-bottom: 2px solid #4f46e5;
+  border-bottom: 2px solid var(--primary-color);
   font-size: 2rem;
   color: #fff;
   margin-bottom: 1.5rem;
@@ -430,7 +406,7 @@ footer p {
   color: #fff;
   margin-bottom: 1rem;
   text-align: center;
-  border-bottom: 2px solid #4f46e5;
+  border-bottom: 2px solid var(--primary-color);
   display: inline-block;
   padding-bottom: 0.5rem;
 }
@@ -455,7 +431,7 @@ footer p {
 }
 
 .values-section li i {
-  color: #4f46e5;
+  color: var(--primary-color);
   margin-right: 0.75rem;
   font-size: 1.2rem;
 }
@@ -470,7 +446,7 @@ footer p {
   color: #fff;
   font-size: 2.2rem;
   margin-bottom: 3rem;
-  border-bottom: 2px solid #4f46e5;
+  border-bottom: 2px solid var(--primary-color);
   display: inline-block;
   padding-bottom: 0.5rem;
 }
@@ -500,7 +476,7 @@ footer p {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-bottom: 2px solid #4f46e5;
+  border-bottom: 2px solid var(--primary-color);
 }
 
 .blog-item h3 {
@@ -515,7 +491,7 @@ footer p {
 }
 
 .blog-item h3 a:hover {
-  color: #4f46e5;
+  color: var(--primary-color);
 }
 
 .blog-item p {
@@ -625,12 +601,12 @@ footer p {
 
 .right-side p i {
   margin-right: 10px;
-  color: #4f46e5;
+  color: var(--primary-color);
   font-size: 1.3rem;
 }
 
 .right-side p a {
-  color: #4f46e5;
+  color: var(--primary-color);
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
@@ -647,7 +623,7 @@ footer p {
 }
 
 @media (max-width: 768px) {
-  .cta-button {
+  .button {
     width: 100%;
     justify-content: center;
     max-width: 300px;
@@ -754,7 +730,7 @@ footer p {
 
 .service-item i {
   font-size: 3rem;
-  color: #4f46e5;
+  color: var(--primary-color);
   margin-bottom: 1.5rem;
 }
 
@@ -820,7 +796,7 @@ footer p {
 }
 
 .swal2-timer-progress-bar {
-  background-color: #4f46e5;
+  background-color: var(--primary-color);
 }
 
 .swal .swal2-header {
