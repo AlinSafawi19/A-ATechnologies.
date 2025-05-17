@@ -82,7 +82,7 @@ nav ul li a.active {
 }
 
 .hero-section {
-  background-image: url('assets/images/black-texture-background.jpg');
+  background-image: url('assets/images/black-texture-background.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -362,7 +362,7 @@ footer p {
 }
 
 .parallax-about {
-  background-image: url('assets/images/about-parallex.jpg');
+  background-image: url('assets/images/about-parallex.webp');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -715,17 +715,7 @@ footer p {
 }
 
 .quote-parallax {
-  background-image: url('assets/images/quote-parallax.jpg');
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  padding: 6rem 1.5rem;
-  text-align: center;
-  color: var(--white);
-}
-
-.quote-parallax {
-  background-image: url('assets/images/quote-parallax.jpg');
+  background-image: url('assets/images/quote-parallax.webp');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -747,7 +737,7 @@ footer p {
 }
 
 .hero-services {
-  background-image: url('assets/images/service-parallex.jpg');
+  background-image: url('assets/images/service-parallex.webp');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
