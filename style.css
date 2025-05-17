@@ -612,7 +612,7 @@ footer p {
 }
 
 .right-side p a {
-  color: var(--primary-color);
+  color: var(--light-gray);
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
