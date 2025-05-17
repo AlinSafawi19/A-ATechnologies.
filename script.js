@@ -35,7 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
     contactForm.addEventListener("submit", function (event) {
       event.preventDefault();
 
-      const fullname = contactForm.querySelector('input[name="fullname"]');
+      const firstname = contactForm.querySelector('input[name="firstname"]');
+      const lastname = contactForm.querySelector('input[name="lastname"]');
       const email = contactForm.querySelector('input[name="email"]');
       const service = contactForm.querySelector('select[name="service"]');
       const budget = contactForm.querySelector('input[name="budget"]');
@@ -58,50 +59,47 @@ document.addEventListener("DOMContentLoaded", function () {
         field.focus();
       }
 
-      // Validate fullname
-      if (!fullname.value.trim()) {
-        showWarning('Please enter your full name.', fullname);
+      if (!firstname.value.trim()) {
+        showWarning('Please enter your firstname.', firstname);
         return;
       }
 
-      // Validate email presence
+      if (!lastname.value.trim()) {
+        showWarning('Please enter your lastname.', lastname);
+        return;
+      }
+
       if (!email.value.trim()) {
         showWarning('Please enter your email.', email);
         return;
       }
 
-      // Validate email format
       const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
       if (!emailRegex.test(email.value.trim())) {
         showWarning('Please enter a valid email address.', email);
         return;
       }
 
-      // Validate service selection
       if (!service.value) {
         showWarning('Please select a service.', service);
         return;
       }
 
-      // Validate budget (greater than 0)
       if (!budget.value.trim() || Number(budget.value) < 1) {
         showWarning('Please enter a valid budget.', budget);
         return;
       }
 
-      // Validate project details
       if (!projectDetails.value.trim()) {
         showWarning('Please describe your project.', projectDetails);
         return;
       }
 
-      // Validate deadline
       if (!deadline.value.trim()) {
         showWarning('Please enter your project timeline.', deadline);
         return;
       }
 
-      // Validate hosting radio (one must be checked)
       if (!hostingYes.checked && !hostingNo.checked) {
         Swal.fire({
           icon: 'warning',
@@ -112,7 +110,6 @@ document.addEventListener("DOMContentLoaded", function () {
           showConfirmButton: false,
           timerProgressBar: true
         });
-        // Focus first radio
         hostingYes.focus();
         return;
       }
@@ -129,7 +126,8 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         body: JSON.stringify({
           fields: {
-            Name: fullname.value.trim(),
+            Firstname: firstname.value.trim(),
+            Lastname: lastname.value.trim(),
             Email: email.value.trim(),
             Service: service.value,
             Budget: Number(budget.value),
