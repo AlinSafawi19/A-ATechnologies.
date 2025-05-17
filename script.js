@@ -31,108 +31,89 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const nameInput = document.querySelector('input[name="name"]');
-  const emailInput = document.querySelector('input[name="email"]');
-  const messageTextarea = document.querySelector('textarea[name="message"]');
-
-  if (nameInput && emailInput) {
-    nameInput.addEventListener('keydown', function (event) {
-      if (event.key === 'Enter') {
-        event.preventDefault();
-        emailInput.focus();
-      }
-    });
-  }
-
-  if (emailInput && messageTextarea) {
-    emailInput.addEventListener('keydown', function (event) {
-      if (event.key === 'Enter') {
-        event.preventDefault();
-        messageTextarea.focus();
-      }
-    });
-  }
-
-  if (messageTextarea && contactForm) {
-    messageTextarea.addEventListener('keydown', function (event) {
-      if (event.key === 'Enter' && !event.shiftKey) {
-        event.preventDefault(); // Prevent newline
-        contactForm.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
-      }
-    });
-  }
-
   if (contactForm) {
     contactForm.addEventListener("submit", function (event) {
       event.preventDefault();
 
-      const name = document.querySelector('input[name="name"]');
-      const email = document.querySelector('input[name="email"]');
-      const message = document.querySelector('textarea[name="message"]');
+      const fullname = contactForm.querySelector('input[name="fullname"]');
+      const email = contactForm.querySelector('input[name="email"]');
+      const service = contactForm.querySelector('select[name="service"]');
+      const budget = contactForm.querySelector('input[name="budget"]');
+      const projectDetails = contactForm.querySelector('textarea[name="project-details"]');
+      const deadline = contactForm.querySelector('input[name="deadline"]');
+      const hostingYes = contactForm.querySelector('input[name="hosting"][value="yes"]');
+      const hostingNo = contactForm.querySelector('input[name="hosting"][value="no"]');
       const submitBtn = contactForm.querySelector('button[type="submit"]');
 
-      if (!name.value.trim()) {
+      function showWarning(message, field) {
         Swal.fire({
           icon: 'warning',
-          text: 'Please enter your name.',
-          timer: 2000,
+          text: message,
+          timer: 2500,
           position: 'top-end',
-          customClass: {
-            popup: 'swal'
-          },
+          customClass: { popup: 'swal' },
           showConfirmButton: false,
           timerProgressBar: true
         });
-        name.focus();
+        field.focus();
+      }
+
+      // Validate fullname
+      if (!fullname.value.trim()) {
+        showWarning('Please enter your full name.', fullname);
         return;
       }
 
+      // Validate email presence
       if (!email.value.trim()) {
-        Swal.fire({
-          icon: 'warning',
-          text: 'Please enter your email.',
-          timer: 2000,
-          position: 'top-end',
-          customClass: {
-            popup: 'swal'
-          },
-          showConfirmButton: false,
-          timerProgressBar: true
-        });
-        email.focus();
+        showWarning('Please enter your email.', email);
         return;
       }
 
+      // Validate email format
       const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-      if (!emailRegex.test(email.value)) {
-        Swal.fire({
-          icon: 'warning',
-          text: 'Please enter a valid email address.',
-          timer: 2000,
-          position: 'top-end',
-          customClass: {
-            popup: 'swal'
-          },
-          showConfirmButton: false,
-          timerProgressBar: true
-        });
-        email.focus();
+      if (!emailRegex.test(email.value.trim())) {
+        showWarning('Please enter a valid email address.', email);
         return;
       }
 
-      if (!message.value.trim()) {
+      // Validate service selection
+      if (!service.value) {
+        showWarning('Please select a service.', service);
+        return;
+      }
+
+      // Validate budget (greater than 0)
+      if (!budget.value.trim() || Number(budget.value) < 1) {
+        showWarning('Please enter a valid budget.', budget);
+        return;
+      }
+
+      // Validate project details
+      if (!projectDetails.value.trim()) {
+        showWarning('Please describe your project.', projectDetails);
+        return;
+      }
+
+      // Validate deadline
+      if (!deadline.value.trim()) {
+        showWarning('Please enter your project timeline.', deadline);
+        return;
+      }
+
+      // Validate hosting radio (one must be checked)
+      if (!hostingYes.checked && !hostingNo.checked) {
         Swal.fire({
           icon: 'warning',
-          text: 'Please enter your message.',
-          timer: 2000,
+          text: 'Please select if you need hosting and email.',
+          timer: 2500,
           position: 'top-end',
-          customClass: {
-            popup: 'swal'
-          },
+          customClass: { popup: 'swal' },
           showConfirmButton: false,
           timerProgressBar: true
         });
-        message.focus();
+        // Focus first radio
+        hostingYes.focus();
         return;
       }
 
@@ -148,9 +129,16 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         body: JSON.stringify({
           fields: {
-            Name: name.value.trim(),
+            Name: fullname.value.trim(),
             Email: email.value.trim(),
-            Message: message.value.trim()
+            Service: service.value,
+            Budget: Number(budget.value),
+            ProjectDetails: projectDetails.value.trim(),
+            Deadline: deadline.value.trim(),
+            Hosting: hostingYes.checked ? 'Yes' : 'No',
+            Phone: contactForm.querySelector('input[name="phone"]').value.trim() || 'N/A',
+            Website: contactForm.querySelector('input[name="website"]').value.trim() || 'N/A',
+            Notes: contactForm.querySelector('textarea[name="notes"]').value.trim() || 'N/A'
           }
         })
       })

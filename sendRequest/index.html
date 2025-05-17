@@ -47,13 +47,83 @@
             <div class="contact-div">
                 <h3>Send a Request</h3>
                 <form class="contact-form" id="contact-form">
-                    <input type="text" name="name" placeholder="Your Name" />
-                    <input type="text" name="email" placeholder="Your Email" />
-                    <textarea name="message" rows="6" placeholder="Your Message"></textarea>
-                    <button type="submit" class="button"><i class="fas fa-paper-plane"></i> Send Request</button>
-                </form>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullname">Full name<span class="required">*</span></label>
+                            <input type="text" id="fullname" name="fullname" placeholder="Full name" class="input" />
+                        </div>
 
-        </div>
+                        <div class="form-group">
+                            <label for="email">Email<span class="required">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="Email address" class="input" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Phone number" class="input" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">What service are you interested in?<span
+                                    class="required">*</span></label>
+                            <select id="service" name="service" class="input">
+                                <option value="" disabled selected>Select a service</option>
+                                <option value="web-applications">Web Applications</option>
+                                <option value="websites">Websites</option>
+                                <option value="ai-chatbots">AI Chatbots Development</option>
+                                <option value="branding">Branding & Concept</option>
+                                <option value="SEO">Search Engine Optimization</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">Budget (USD)<span class="required">*</span></label>
+                            <input type="number" id="budget" name="budget" min="1" step="1"
+                                placeholder="Enter your budget" class="input" />
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="project-details">In short, what is this project about?<span
+                                    class="required">*</span></label>
+                            <textarea id="project-details" name="project-details" rows="4"
+                                placeholder="Describe your project" class="input"></textarea>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="website">What is your current or intended website address?</label>
+                            <input type="url" id="website" name="website" placeholder="https://yourwebsite.com"
+                                class="input" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="deadline">How soon do you need the project completed?<span
+                                    class="required">*</span></label>
+                            <input type="text" id="deadline" name="deadline" placeholder="Enter your timeline"
+                                class="input" />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Do you need hosting and email?<span class="required">*</span></label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="hosting" value="yes" /> Yes</label>
+                                <label><input type="radio" name="hosting" value="no" /> No</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="notes">Additional notes</label>
+                            <textarea id="notes" name="notes" rows="3" placeholder="Any extra information"
+                                class="input"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="button-container">
+                        <button type="submit" class="button">
+                            <i class="fas fa-paper-plane"></i> Send Request
+                        </button>
+                    </div>
+                </form>
+            </div>
     </section>
 
     <div class="scroll-buttons">
@@ -84,7 +154,7 @@
             </div>
         </div>
     </footer>
-    
+
     <script src="/assets/js/sweetalert2@11.js"></script>
     <script type="module" src="/script.js"></script>
 </body>
