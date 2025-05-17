@@ -267,13 +267,44 @@ nav ul li a.active {
 
 footer {
   background-color: var(--dark-bg);
-  padding: 2rem 0;
-  text-align: center;
+  padding: 2rem;
+  color: var(--light-gray);
+  font-size: 1rem;
 }
 
 footer p {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.contact-info-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-left: 1rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-item i {
+  color: var(--primary-color);
+}
+
+.contact-item a {
   color: var(--light-gray);
-  font-size: 1rem;
+  text-decoration: none;
+  margin-left: 0.2rem;
+}
+
+.contact-item a:hover {
+  color: var(--light-gray);
+  text-decoration: underline;
 }
 
 .scroll-buttons {
@@ -444,7 +475,8 @@ footer p {
 .blog-section {
   padding: 4rem 1.5rem;
   background-color: var(--almost-black);
-  border-radius: 8px;;
+  border-radius: 8px;
+  ;
 }
 
 .blog-section h2 {
@@ -519,19 +551,13 @@ footer p {
   padding: 1.5rem;
 }
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-}
-
-.left-side {
+.contact-div {
   background: var(--dark-bg);
   padding: 2rem;
   border-radius: 8px;
 }
 
-.left-side h3 {
+.contact-div h3 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
   color: var(--white);
@@ -586,63 +612,11 @@ footer p {
   align-self: center;
 }
 
-.right-side {
-  background: var(--dark-bg);
-  padding: 2rem;
-  border-radius: 8px;
-}
-
-.right-side h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: var(--white);
-}
-
-.right-side p {
-  font-size: 1rem;
-  color: var(--light-gray);
-  margin-bottom: 0.5rem;
-  line-height: 1.5;
-}
-
-.right-side p i {
-  margin-right: 10px;
-  color: var(--primary-color);
-  font-size: 1.3rem;
-}
-
-.right-side p a {
-  color: var(--light-gray);
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-}
-
-.right-side p a:hover {
-  color: var(--white);
-  text-decoration: underline;
-}
-
-.right-side .contact-info {
-  margin-top: 2rem;
-  border-top: 1px solid var(--darker-gray);
-  padding-top: 1rem;
-}
-
 @media (max-width: 768px) {
   .button {
     width: 100%;
     justify-content: center;
     max-width: 300px;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .left-side,
-  .right-side {
-    padding: 1.5rem;
   }
 
   .contact-title {

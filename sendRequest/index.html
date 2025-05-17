@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us - The AA Technologies</title>
+    <title>Send Request - The AA Technologies</title>
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="/assets/font-awesome/css/all.min.css" />
 </head>
@@ -20,7 +20,7 @@
                     <li><a href="/" class="active">Home</a></li>
                     <li><a href="/about/">About</a></li>
                     <li><a href="/services/">Services</a></li>
-                    <li><a href="/contact/">Contact</a></li>
+                    <li><a href="/sendRequest/">Send Request</a></li>
                 </ul>
                 <a href="https://calendly.com/aa_techpartners" target="_blank" rel="noopener"
                     class="button schedule-btn">
@@ -44,27 +44,14 @@
 
         <div class="contact-grid">
             <!-- Contact Form -->
-            <div class="left-side">
-                <h3>Send a Message</h3>
+            <div class="contact-div">
+                <h3>Send a Request</h3>
                 <form class="contact-form" id="contact-form">
                     <input type="text" name="name" placeholder="Your Name" />
                     <input type="text" name="email" placeholder="Your Email" />
                     <textarea name="message" rows="6" placeholder="Your Message"></textarea>
-                    <button type="submit" class="button"><i class="fas fa-paper-plane"></i> Send Message</button>
+                    <button type="submit" class="button"><i class="fas fa-paper-plane"></i> Send Request</button>
                 </form>
-            </div>
-
-            <!-- Contact Details -->
-            <div class="right-side">
-                <h3>Contact Info</h3>
-                <p><i class="fas fa-envelope"></i> <a
-                        href="mailto:aa_techpartners@outlook.com">aa_techpartners@outlook.com</a></p>
-                <p><i class="fas fa-phone-alt"></i> <a href="tel:+96176929993">+961 7 692 9993</a></p>
-                <p><i class="fas fa-phone-alt"></i> <a href="tel:+96171882088">+961 7 188 2088</a></p>
-                <p><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 12:00 AM</p>
-                <p><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/theaatechnologies"
-                        target="_blank" rel="noopener">theaatechnologies</a></p>
-            </div>
 
         </div>
     </section>
@@ -74,10 +61,30 @@
     </div>
 
     <footer>
-        <div class="footer-container">
-            <p>&copy; 2025 The AA Technologies. All Rights Reserved.</p>
+        <p>&copy; 2025 The AA Technologies. All Rights Reserved.</p>
+        <div class="contact-info-row">
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span><a href="tel:+96176929993">+961 (76) 929-993</a> | <a href="tel:+96171882088">+961 (71)
+                        882-088</a></span>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <span><a href="https://wa.me/96176929993" target="_blank" rel="noopener">+961 (76) 929-993</a> |
+                    <a href="https://wa.me/96171882088">+961 (71) 882-088</a></span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span><a href="mailto:aa_techpartners@outlook.com">aa_techpartners@outlook.com</a></span>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-instagram"></i>
+                <span><a href="https://www.instagram.com/theaatechnologies" target="_blank"
+                        rel="noopener">@theaatechnologies</a></span>
+            </div>
         </div>
     </footer>
+    
     <script src="/assets/js/sweetalert2@11.js"></script>
     <script type="module" src="/script.js"></script>
 </body>
