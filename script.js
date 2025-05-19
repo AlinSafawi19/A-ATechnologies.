@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
       })
         .then(response => response.json())
         .then(data => {
-          submitBtn.innerHTML = `<i class="fas fa-paper-plane"></i> Send Message`;
+          submitBtn.innerHTML = `<i class="fas fa-paper-plane"></i> Send`;
           Swal.fire({
             icon: 'success',
             html: `
@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(err => {
           submitBtn.disabled = false;
-          submitBtn.innerHTML = `<i class="fas fa-paper-plane"></i> Send Message`;
+          submitBtn.innerHTML = `<i class="fas fa-paper-plane"></i> Send`;
           Swal.fire({
             icon: 'error',
             text: 'Something went wrong. Please try again later.',
