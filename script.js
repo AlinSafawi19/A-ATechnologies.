@@ -198,7 +198,7 @@ document.addEventListener('scroll', function () {
   var scrollPosition = window.scrollY;
   var parallaxabout = document.querySelector('.parallax-about');
   var parallaxquote = document.querySelector('.quote-parallax');
-  var parallaxservices = document.querySelector('.hero-services');
+  var parallaxservices = document.querySelector('.hero-section');
   var parallaxindex = document.querySelector('.hero-section');
 
   if (parallaxabout) {  // Check if the element exists
