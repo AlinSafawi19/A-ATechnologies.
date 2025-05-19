@@ -3,17 +3,11 @@
   --color-primary: #1F6FEB;
   --color-primary-hover: #155ACF;
   --color-dark: #1C1C1E;
-  --color-accent-purple: #A259FF;
-  --color-accent-teal: #00D0B6;
   --color-light: #DCE1E7;
   --color-gray: #A0AAB2;
-  --color-highlight: #FFB443;
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-  --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
-  --transition-slow: 0.5s ease;
 }
 
 * {
@@ -84,21 +78,6 @@ nav ul li a {
 nav ul li a:hover,
 nav ul li a.active {
   color: var(--color-primary);
-}
-
-.hero-section {
-  background-image: url('assets/images/black-texture-background.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  color: var(--color-light);
-  padding: 6rem 1.5rem 4rem;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
 }
 
 .hero-title {
@@ -225,7 +204,7 @@ nav ul li a.active {
   width: 100%;
   height: 100%;
   background: linear-gradient(120deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
-  transition: all var(--transition-fast);
+  transition: all 0.2s ease;
 }
 
 .explore-services:hover::before {
@@ -495,6 +474,79 @@ footer {
   }
 }
 
+.privacy-policy-section {
+  color: #a0a0a0;
+}
+
+.privacy-policy-section h1 {
+  font-weight: 600;
+  font-size: 2.25rem;
+  margin-bottom: 1.8rem;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.privacy-policy-section h2 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: #c2c2c2;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.4rem;
+}
+
+.privacy-policy-section p {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  color: #bbb;
+}
+
+.privacy-policy-section ul {
+  list-style-type: disc;
+  padding-left: 1.4rem;
+  margin-bottom: 1.5rem;
+  color: #bbb;
+}
+
+.privacy-policy-section ul li {
+  margin-bottom: 0.6rem;
+}
+
+.privacy-policy-section a {
+  color: #8ab4f8;
+  text-decoration: none;
+  transition: color 0.25s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.privacy-policy-section a:hover,
+.privacy-policy-section a:focus {
+  color: #aecbfa;
+  border-bottom: 1px solid #aecbfa;
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .privacy-policy-section {
+    margin: 2rem 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .privacy-policy-section h1 {
+    font-size: 1.75rem;
+  }
+
+  .privacy-policy-section h2 {
+    font-size: 1.25rem;
+  }
+
+  .privacy-policy-section p,
+  .privacy-policy-section ul li {
+    font-size: 0.95rem;
+  }
+}
+
 .scroll-buttons {
   position: fixed;
   bottom: 5rem;
@@ -537,6 +589,62 @@ footer {
     justify-content: center;
     max-width: 300px;
   }
+}
+
+.hero-section {
+  background-image: url('assets/images/service-parallex.webp');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--color-light);
+  padding: 6rem 1.5rem 4rem;
+  position: relative;
+  z-index: 0;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.hero-section h2,
+.hero-section p {
+  position: relative;
+  z-index: 1;
+}
+
+.services-intro {
+  text-align: center;
+}
+
+.services-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-light);
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  padding-top: 2rem;
+}
+
+.services-description {
+  font-size: 1.2rem;
+  color: var(--color-gray);
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
 }
 
 /* About Section Styles */
@@ -800,7 +908,7 @@ footer {
   padding: 0.75rem 1rem;
   border-radius: 50px;
   width: 100%;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: all var(--transition-normal);
   resize: none;
   outline-offset: 2px;
@@ -896,129 +1004,4 @@ footer {
   padding: 6rem 1.5rem;
   text-align: center;
   color: var(--color-light);
-}
-
-/* services */
-.hero-section {
-  background-image: url('assets/images/service-parallex.webp');
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: var(--color-light);
-  padding: 6rem 1.5rem 4rem;
-  position: relative;
-  z-index: 0;
-  height: 100vh;
-}
-
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: -1;
-}
-
-.hero-section h2,
-.hero-section p {
-  position: relative;
-  z-index: 1;
-}
-
-.services-intro {
-  text-align: center;
-}
-
-.services-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--color-light);
-  margin-bottom: 0.5rem;
-  letter-spacing: 2px;
-  padding-top: 2rem;
-}
-
-.services-description {
-  font-size: 1.2rem;
-  color: var(--color-gray);
-  max-width: 800px;
-  margin: 0 auto 2rem;
-  line-height: 1.7;
-}
-
-.privacy-policy-section {
-  color: #a0a0a0;
-}
-
-.privacy-policy-section h1 {
-  font-weight: 600;
-  font-size: 2.25rem;
-  margin-bottom: 1.8rem;
-  text-align: center;
-  letter-spacing: 0.03em;
-}
-
-.privacy-policy-section h2 {
-  font-weight: 500;
-  font-size: 1.5rem;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-  color: #c2c2c2;
-  border-bottom: 1px solid #333;
-  padding-bottom: 0.4rem;
-}
-
-.privacy-policy-section p {
-  font-size: 1rem;
-  margin-bottom: 1.2rem;
-  color: #bbb;
-}
-
-.privacy-policy-section ul {
-  list-style-type: disc;
-  padding-left: 1.4rem;
-  margin-bottom: 1.5rem;
-  color: #bbb;
-}
-
-.privacy-policy-section ul li {
-  margin-bottom: 0.6rem;
-}
-
-.privacy-policy-section a {
-  color: #8ab4f8;
-  text-decoration: none;
-  transition: color 0.25s ease;
-  border-bottom: 1px solid transparent;
-}
-
-.privacy-policy-section a:hover,
-.privacy-policy-section a:focus {
-  color: #aecbfa;
-  border-bottom: 1px solid #aecbfa;
-  outline: none;
-}
-
-@media (max-width: 600px) {
-  .privacy-policy-section {
-    margin: 2rem 1rem;
-    padding: 1.5rem 1rem;
-  }
-
-  .privacy-policy-section h1 {
-    font-size: 1.75rem;
-  }
-
-  .privacy-policy-section h2 {
-    font-size: 1.25rem;
-  }
-
-  .privacy-policy-section p,
-  .privacy-policy-section ul li {
-    font-size: 0.95rem;
-  }
 }

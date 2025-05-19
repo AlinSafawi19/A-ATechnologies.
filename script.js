@@ -247,6 +247,6 @@ scrollUpButton.addEventListener('click', () => {
 document.getElementById('scroll-to-services').addEventListener('click', function () {
   const target = document.querySelector('.services-intro');
   if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+    target.scrollIntoView({ behavior: 'smooth' });
   }
 });
