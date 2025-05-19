@@ -243,3 +243,10 @@ scrollUpButton.addEventListener('click', () => {
   }
   v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
 })(document, 'script');
+
+document.getElementById('scroll-to-services').addEventListener('click', function () {
+  const target = document.querySelector('.services-intro');
+  if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+  }
+});
